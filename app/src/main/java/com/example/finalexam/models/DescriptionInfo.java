@@ -1,19 +1,29 @@
 package com.example.finalexam.models;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * @author fouad
  */
 
 public class DescriptionInfo {
 
-    private String description;
-    private String icon;
+    @SerializedName("artist")
+    private String artist;
 
-    public String getDescription() {
-        return description;
+    @SerializedName("song")
+    private String song;
+
+    @SerializedName("imageURL")
+    private String imageURL;
+
+    public String getArtistName() {
+        return artist;
     }
 
-    public String getIcon() {
-        return icon;
-    }
+    public String getSong() { return song;}
+
+    public String getImageURL() { return imageURL;}
+
+
 }

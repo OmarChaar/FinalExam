@@ -10,17 +10,10 @@ import java.util.List;
 
 public class WeatherInfo {
 
-    @SerializedName("main")
-    private TempInfo tempInfo;
+    @SerializedName("data")
+    private List<DescriptionInfo> artistName;
 
-    @SerializedName("weather")
-    private List<DescriptionInfo> descriptionInfo;
-
-    public TempInfo getTempInfo() {
-        return tempInfo;
-    }
-
-    public List<DescriptionInfo> getDescriptionInfo() {
-        return descriptionInfo;
+    public List<DescriptionInfo> getData() {
+        return artistName;
     }
 }
