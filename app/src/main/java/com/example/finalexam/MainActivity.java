@@ -1,5 +1,8 @@
 package com.example.finalexam;
 
+import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         apiManager = new ApiManager();
 
-
         textView_ArtistName = findViewById(R.id.textView_ArtistName);
         textView_SongName = findViewById(R.id.textView_SongName);
+
+        Intent serviceIntent = new Intent(this, MyService.class);
+        startService(serviceIntent);
 
         imageView_SongTitle = findViewById(R.id.imageView_SongTitle);
 
@@ -57,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
                     textView_ArtistName.setText("Artist Name: " + name);
                     textView_SongName.setText("Song Name: " + song);
 
-
-//                    Log.d("HERE", " " + imageURL);
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
